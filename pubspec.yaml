@@ -1,0 +1,38 @@
+name: HMTI_ABSEN
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  mobile_scanner: ^6.0.2
+  http: ^0.13.4
+  provider: ^6.0.5
+  shared_preferences: ^2.3.3
+  intl: ^0.17.0 # Pastikan menggunakan versi terbaru
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon.png"
+  adaptive_icon_background : "#ffffff"
+  adaptive_icon_foreground : "assets/icon.png"
+  
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/LOGO_HMTI.png

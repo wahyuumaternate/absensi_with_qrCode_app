@@ -1,0 +1,51 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.absensi_app"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.absensi_app"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug // Sesuaikan dengan konfigurasi signing Anda
+        }
+    }
+
+    // Menambahkan fungsi untuk mengubah nama APK
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            // Gunakan output.outputFileName untuk mendapatkan nama file yang saat ini
+            if (output.outputFileName.endsWith('.apk')) {
+                // Sesuaikan nama di sini
+                def newName = "HMTI ABSEN.apk"
+                output.outputFileName = newName
+            }
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
